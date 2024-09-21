@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Options</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome, <span id="user-name"></span>!</h1>
+
+    <h2>Select Play Mode</h2>
+    <button onclick="window.location.href='/gameAI.html'">Play Against AI</button>
+    <button onclick="window.location.href='/multiplayerOptions.html'">Play Multiplayer</button>
+    <button onclick="window.location.href='/howToPlay.html'">How to Play</button>
+    
+    <button onclick="window.location.href='/history.html'">History</button>
+
+    <button onclick="window.location.href='/'">Logout</button>
+
+    <script>
+        var userName = localStorage.getItem('userName');
+        document.getElementById('user-name').textContent = userName;
+    </script>
+</body>
+</html>

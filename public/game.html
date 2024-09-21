@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>หมากหนีบ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>หมากหนีบ</h1>
+    <button onclick="window.location.href='playOptions.html'">Back to Play Options</button>
+    <div id="room-id-display" style="position: absolute; top: 10px; right: 10px;">Room ID: </div>
+    <div id="turn-display">Turn ของฝ่ายขาว</div>
+    
+    <div id="board-container">
+        <div class="labels-letters top-labels" id="top-labels"></div>
+        <div class="board-wrapper">
+            <div class="labels-nums left-labels" id="left-labels"></div>
+            <div id="board" class="board-8x8"></div>
+            <div class="labels-nums right-labels" id="right-labels"></div>
+        </div>
+        <div class="labels-letters bottom-labels" id="bottom-labels"></div>
+    </div>
+        <div class="labels-letters bottom-labels">
+        </div>
+    </div>
+
+    <div id="total-game-timer">Total Game Time: 10:00</div>
+    <div id="white-timer">White Time: 05:00</div>
+    <div id="black-timer">Black Time: 05:00</div>
+    <div id="move-history">
+        <h3>Move History</h3>
+        <ul id="history-list"></ul>
+        <button id="prevMove">Previous Move</button>
+        <button id="nextMove">Next Move</button>
+    </div>
+    <div id="seat-selection">
+        <button id="choose-white">Choose White</button>
+        <button id="choose-black">Choose Black</button>
+        <button id="stand-up" style="display: none;">Stand Up</button>
+    </div>
+    <button id="start-game" style="display: none;">Start Game</button>
+    <button id="viewPgnButton">VIEW PGN</button>
+    <button id="surrender-button" style="display: none;">Surrender</button>
+    <button id="rest-game" style="display: none;">RestGame</button>
+    <button id="accept-rest-game" style="display: none;">Accept RestGame</button>
+    <div id="chat">
+        <h3>Chat</h3>
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Type your message">
+        <button id="send-chat">Send</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="client.js"></script>
+</body>
+
+</html>

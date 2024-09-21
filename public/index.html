@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="google-signin-client_id" content="google api">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login to the Game</h1>
+
+        <div id="g_id_onload"
+             data-client_id="google api"
+             data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+
+        <p>or</p>
+
+        <button id="guest-login" onclick="guestLogin()">Login as Guest</button>
+    </div>
+
+    <script>
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential);
+            const userName = data.name;
+
+            localStorage.setItem('userName', userName);
+            window.location.href = "playOptions.html";
+        }
+        function guestLogin() {
+            var randomNum = Math.floor(Math.random() * 1000);
+            var guestName = "guest" + randomNum;
+            localStorage.setItem('userName', guestName);
+            window.location.href = "playOptions.html";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+</body>
+</html>

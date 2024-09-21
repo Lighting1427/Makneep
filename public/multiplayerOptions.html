@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Options</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Multiplayer Options</h1>
+    <div class="multiplayer-container">
+        <button onclick="createRoom()">Create Room</button>
+
+        <p>Or</p>
+
+        <input id="roomId" type="text" placeholder="Enter Room ID">
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+    <div id="room-details">
+    </div>
+
+    <div id="room-list">
+    </div>
+
+    <button onclick="window.location.href='/playOptions.html'">Back to Play Options</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="multiplayerOptions.js"></script> 
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Game History</h1>
+
+    <div>
+        <input type="text" id="search-input" placeholder="Search history..." />
+        <button id="search-button">Search</button>
+    </div>
+
+    <table id="history-table">
+        <thead>
+            <tr>
+                <th>Players</th>
+                <th>Result</th>
+                <th>Date</th>
+                <th>Duration</th>
+                <th>PGN</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <button onclick="window.location.href='/playOptions.html'">Back to Play Options</button>
+
+    <script>
+        let historyData = [];
+        let filteredData = [];
+
+        fetch('/gameHistory')
+            .then(response => response.json())
+            .then(data => {
+                historyData = data;
+                filteredData = data;
+                renderTable(filteredData);
+            });
+
+        function renderTable(data) {
+            const tableBody = document.querySelector('#history-table tbody');
+            tableBody.innerHTML = ''; 
+            data.forEach((game, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${game.whitePlayer} vs ${game.blackPlayer}</td>
+                    <td>${formatResult(game)}</td>
+                    <td>${formatDate(game.date)}</td>
+                    <td>${formatDuration(game.duration)}</td>
+                    <td><button onclick="viewPgn(${index})">View PGN</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function formatResult(game) {
+            if (game.winner === 'draw') {
+                return 'Draw';
+            } else if (game.winner === 'w') {
+                return 'White wins';
+            } else if (game.winner === 'b') {
+                return 'Black wins';
+            } else {
+                return 'Unknown';
+            }
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString();
+        }
+
+        function formatDuration(durationMs) {
+            const seconds = Math.floor(durationMs / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${minutes}m ${secs}s`;
+        }
+
+        function viewPgn(gameIndex) {
+            const game = filteredData[gameIndex];
+            localStorage.setItem('pgnData', JSON.stringify(game));
+            window.open('pgn.html', '_blank');
+        }
+
+        document.getElementById('search-button').addEventListener('click', () => {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            filteredData = historyData.filter(game => 
+                game.whitePlayer.toLowerCase().includes(searchTerm) ||
+                game.blackPlayer.toLowerCase().includes(searchTerm) ||
+                formatResult(game).toLowerCase().includes(searchTerm) ||
+                formatDate(game.date).toLowerCase().includes(searchTerm)
+            );
+            renderTable(filteredData);
+        });
+
+        document.getElementById('search-input').addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                document.getElementById('search-button').click();
+            }
+        });
+    </script>
+</body>
+</html>

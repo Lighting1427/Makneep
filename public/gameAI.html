@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หมากหนีบ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>หมากหนีบเล่นกับ AI</h1>
+    <button onclick="window.location.href='playOptions.html'">Back to Play Options</button>
+    <div id="turn-display">Turn ของฝ่ายขาว</div>
+    <div id="board-container">
+        <div id="left-nums" class="labels-nums"></div>
+        <div id="board-wrapper">
+            <div id="top-letters" class="labels-letters"></div>
+            <div id="board" class="board-8x8"></div> 
+            <div id="bottom-letters" class="labels-letters"></div>
+        </div>
+        <div id="right-nums" class="labels-nums"></div>
+    </div>
+    <div id="white-timer">White Time: 05:00</div>
+    <div id="black-timer">Black Time: 05:00</div>
+    <div id="move-history">
+        <h3>Move History</h3>
+        <ul id="history-list"></ul>
+        <button id="prevMove">Previous Move</button>
+        <button id="nextMove">Next Move</button>
+    </div>
+    <div id="seat-selection">
+        <button id="selectWhite">เลือกเป็นฝ่ายขาว</button>
+        <button id="selectBlack">เลือกเป็นฝ่ายดำ</button>
+        <button id="leaveSeat" style="display: none;">ลุกออกจากที่นั่ง</button>
+    </div>
+    <div id="player-info">
+        <span id="white-player-name">White: Not selected</span>
+        <span id="black-player-name">Black: Not selected</span>
+    </div>
+    <button id="startGame" style="display: none;">เริ่มเกม</button>
+    <button id="restartGame" style="display: none;">Restart Game</button>
+    <button id="viewPgnButton">VIEW PGN</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="gameAI.js"></script>
+</body>
+</html>
