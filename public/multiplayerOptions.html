@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplayer Options</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="multiplayerOptions.css">
 </head>
 <body>
     <h1>Multiplayer Options</h1>
@@ -16,13 +16,15 @@
         <input id="roomId" type="text" placeholder="Enter Room ID">
         <button onclick="joinRoom()">Join Room</button>
     </div>
+
     <div id="room-details">
+        <h2>Available Rooms</h2>
     </div>
 
     <div id="room-list">
     </div>
 
-    <button onclick="window.location.href='/playOptions.html'">Back to Play Options</button>
+    <button class="back-button" onclick="window.location.href='/playOptions.html'">Back to Play Options</button>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="multiplayerOptions.js"></script> 

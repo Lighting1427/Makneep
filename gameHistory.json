@@ -1,0 +1,161 @@
+[
+  {
+    "whitePlayer": "guest141",
+    "blackPlayer": "Unknown",
+    "winner": "w",
+    "date": "2024-09-28T16:22:43.998Z",
+    "moveHistory": [
+      {
+        "move": "c1 - c2",
+        "boardState": [
+          [
+            {
+              "color": "b",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 1,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 2,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 3,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 4,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 5,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 6,
+              "y": 0
+            },
+            {
+              "color": "b",
+              "x": 7,
+              "y": 0
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            {
+              "color": "w",
+              "x": 2,
+              "y": 6
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "color": "w",
+              "x": 0,
+              "y": 7
+            },
+            {
+              "color": "w",
+              "x": 1,
+              "y": 7
+            },
+            null,
+            {
+              "color": "w",
+              "x": 3,
+              "y": 7
+            },
+            {
+              "color": "w",
+              "x": 4,
+              "y": 7
+            },
+            {
+              "color": "w",
+              "x": 5,
+              "y": 7
+            },
+            {
+              "color": "w",
+              "x": 6,
+              "y": 7
+            },
+            {
+              "color": "w",
+              "x": 7,
+              "y": 7
+            }
+          ]
+        ],
+        "capturedPieces": []
+      }
+    ],
+    "duration": 22194
+  }
+]

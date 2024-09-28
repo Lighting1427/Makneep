@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.multiplayer-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px 0;
+    width: 50%;
+}
+
+button:not(.back-button) {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+button:not(.back-button):hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.back-button {
+    background-color: #0056b3;;
+    color: #ffffff;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 90%;
+    max-width: 300px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+#room-details, #room-list {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#room-details h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+}

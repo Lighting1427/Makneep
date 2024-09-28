@@ -185,20 +185,19 @@ document.getElementById('startGame').addEventListener('click', startGame);
 document.getElementById('restartGame').addEventListener('click', restartGame);
 document.getElementById('viewPgnButton').addEventListener('click', () => {
     const whitePlayer = localStorage.getItem('userName') || 'White Player';
-    const blackPlayer = 'AI'; 
+    const blackPlayer = 'AI';
     const gameResult = '*'; 
-    
     const pgnData = {
         whitePlayer,
         blackPlayer,
         result: gameResult,
         startTime: new Date().toISOString(),
-        moveHistory
+        moveHistory,
     };
-
     localStorage.setItem('pgnData', JSON.stringify(pgnData));
-    window.location.href = 'pgn.html';
+    window.open('pgn.html', '_blank');
 });
+
 
 function formatPosition(row, col) {
     const letters = 'abcdefgh'; 
